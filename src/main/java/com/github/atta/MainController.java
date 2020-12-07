@@ -23,7 +23,19 @@ public class MainController {
 
     @FXML
     void onErasureBtnClick(ActionEvent event) {
+        // TODO: Show progress bar
 
+        String inputText = inputArea.getText();
+        String translatedText = Translator.translate(inputText);
+        String invTranslatedText = InvTranslator.invTranslate(translatedText);
+        String fixInfo = Checker.check(inputText, invTranslatedText);
+        String fixedText = Fixer.fix(invTranslatedText, fixInfo);
+        String validationResult = Verifier.verify(inputText, fixedText);
+
+        outputArea.setText(fixedText);
+
+        // TODO: Display validationResult in a TextArea
+        System.out.println(validationResult);
     }
 
     @FXML
