@@ -11,7 +11,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("/Main.fxml"));
-            Scene scene = new Scene(root, 800, 270);
+            Scene scene = new Scene(root, 1024, 768);
             scene.getStylesheets().add(getClass().getResource("/application.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.setTitle("ATTA - a personal language characteristic erasure tool");

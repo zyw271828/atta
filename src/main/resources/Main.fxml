@@ -1,64 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXMasonryPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane xmlns="http://javafx.com/javafx/11.0.2"
     xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.atta.MainController">
-    <center>
-        <JFXMasonryPane BorderPane.alignment="CENTER">
-            <children>
-                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
-                    <font>
-                        <Font name="Iosevka Heavy" size="25.0" />
-                    </font>
-                </JFXButton>
-                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
-                    <font>
-                        <Font name="Iosevka Heavy" size="25.0" />
-                    </font>
-                </JFXButton>
-                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
-                    <font>
-                        <Font name="Iosevka Heavy" size="25.0" />
-                    </font>
-                </JFXButton>
-                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
-                    <font>
-                        <Font name="Iosevka Heavy" size="25.0" />
-                    </font>
-                </JFXButton>
-                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
-                    <font>
-                        <Font name="Iosevka Heavy" size="25.0" />
-                    </font>
-                </JFXButton>
-                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
-                    <font>
-                        <Font name="Iosevka Heavy" size="25.0" />
-                    </font>
-                </JFXButton>
-            </children>
-        </JFXMasonryPane>
-    </center>
-    <bottom>
-        <Pane prefHeight="64.0" prefWidth="848.0" BorderPane.alignment="CENTER" />
-    </bottom>
+    <top>
+        <Pane prefHeight="64.0" prefWidth="1024.0" BorderPane.alignment="CENTER" />
+    </top>
     <left>
-        <Pane prefHeight="160.0" prefWidth="64.0" BorderPane.alignment="CENTER" />
+        <Pane prefHeight="600.0" prefWidth="64.0" BorderPane.alignment="CENTER" />
     </left>
     <right>
-        <Pane prefHeight="160.0" prefWidth="64.0" BorderPane.alignment="CENTER" />
+        <Pane prefHeight="600.0" prefWidth="64.0" BorderPane.alignment="CENTER" />
     </right>
-    <top>
-        <Label alignment="CENTER" prefHeight="64.0" prefWidth="848.0" text="Test" BorderPane.alignment="CENTER">
-            <font>
-                <Font name="Iosevka" size="20.0" />
-            </font>
-        </Label>
-    </top>
+    <bottom>
+        <BorderPane prefHeight="128.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <top>
+                <Pane prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+            </top>
+            <left>
+                <Pane prefHeight="64.0" prefWidth="256.0" BorderPane.alignment="CENTER" />
+            </left>
+            <right>
+                <Pane prefHeight="64.0" prefWidth="256.0" BorderPane.alignment="CENTER" />
+            </right>
+            <bottom>
+                <Pane prefHeight="32.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            </bottom>
+            <center>
+                <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <left>
+                        <JFXButton fx:id="erasureBtn" buttonType="RAISED" defaultButton="true" onAction="#onErasureBtnClick" prefHeight="64.0" prefWidth="160.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Erasure">
+                            <font>
+                                <Font name="Iosevka Heavy" size="25.0" />
+                            </font>
+                        </JFXButton>
+                    </left>
+                    <right>
+                        <JFXButton fx:id="exitBtn" buttonType="RAISED" cancelButton="true" onAction="#onExitBtnClick" prefHeight="64.0" prefWidth="160.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Exit">
+                            <font>
+                                <Font name="Iosevka Heavy" size="25.0" />
+                            </font>
+                        </JFXButton>
+                    </right>
+                </BorderPane>
+            </center>
+        </BorderPane>
+    </bottom>
+    <center>
+        <GridPane BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="289.0" minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="550.0" minHeight="10.0" prefHeight="550.0" valignment="CENTER" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Input:">
+                    <font>
+                        <Font name="Iosevka" size="25.0" />
+                    </font>
+                </Label>
+                <Label text="Output:" GridPane.columnIndex="1">
+                    <font>
+                        <Font name="Iosevka" size="25.0" />
+                    </font>
+                </Label>
+                <ScrollPane fitToHeight="true" fitToWidth="true" stylesheets="@ScrollPane.css" GridPane.rowIndex="1">
+                    <content>
+                        <JFXTextArea fx:id="inputArea" focusColor="#0091EA">
+                            <font>
+                                <Font name="Iosevka" size="20.0" />
+                            </font>
+                        </JFXTextArea>
+                    </content>
+                </ScrollPane>
+                <ScrollPane fitToHeight="true" fitToWidth="true" stylesheets="@ScrollPane.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <content>
+                        <JFXTextArea fx:id="outputArea" focusColor="#0091EA">
+                            <font>
+                                <Font name="Iosevka" size="20.0" />
+                            </font>
+                        </JFXTextArea>
+                    </content>
+                </ScrollPane>
+            </children>
+        </GridPane>
+    </center>
 </BorderPane>
