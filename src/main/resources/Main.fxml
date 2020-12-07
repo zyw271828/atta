@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXMasonryPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.2"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.atta.MainController">
+    <center>
+        <JFXMasonryPane BorderPane.alignment="CENTER">
+            <children>
+                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
+                    <font>
+                        <Font name="Iosevka Heavy" size="25.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
+                    <font>
+                        <Font name="Iosevka Heavy" size="25.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
+                    <font>
+                        <Font name="Iosevka Heavy" size="25.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
+                    <font>
+                        <Font name="Iosevka Heavy" size="25.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
+                    <font>
+                        <Font name="Iosevka Heavy" size="25.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #0091EA; -fx-text-fill: #FFFFFF;" text="Test">
+                    <font>
+                        <Font name="Iosevka Heavy" size="25.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </JFXMasonryPane>
+    </center>
+    <bottom>
+        <Pane prefHeight="64.0" prefWidth="848.0" BorderPane.alignment="CENTER" />
+    </bottom>
+    <left>
+        <Pane prefHeight="160.0" prefWidth="64.0" BorderPane.alignment="CENTER" />
+    </left>
+    <right>
+        <Pane prefHeight="160.0" prefWidth="64.0" BorderPane.alignment="CENTER" />
+    </right>
+    <top>
+        <Label alignment="CENTER" prefHeight="64.0" prefWidth="848.0" text="Test" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Iosevka" size="20.0" />
+            </font>
+        </Label>
+    </top>
+</BorderPane>

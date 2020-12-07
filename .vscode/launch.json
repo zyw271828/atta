@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<atta>",
+            "request": "launch",
+            "vmArgs": "--module-path /usr/share/openjfx/lib --add-modules=javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web,javafx.controls",
+            "mainClass": "com.github.atta.Main",
+            "projectName": "atta"
+        }
+    ]
+}
