@@ -4,6 +4,8 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -11,10 +13,25 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.2"
+<BorderPane prefHeight="768.0" prefWidth="1024.0"
+    xmlns="http://javafx.com/javafx/11.0.2"
     xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.atta.MainController">
     <top>
-        <Pane prefHeight="64.0" prefWidth="1024.0" BorderPane.alignment="CENTER" />
+        <BorderPane BorderPane.alignment="CENTER">
+            <center>
+                <ImageView fitHeight="64.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                    <image>
+                        <Image url="@atta_f4f4f4.png" />
+                    </image>
+                </ImageView>
+            </center>
+            <top>
+                <Pane prefHeight="5.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            </top>
+            <bottom>
+                <Pane prefHeight="5.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            </bottom>
+        </BorderPane>
     </top>
     <left>
         <Pane prefHeight="600.0" prefWidth="64.0" BorderPane.alignment="CENTER" />
