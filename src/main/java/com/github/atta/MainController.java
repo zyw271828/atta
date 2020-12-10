@@ -38,10 +38,11 @@ public class MainController {
             Task<Boolean> task = new Task<Boolean>() {
                 @Override
                 protected Boolean call() throws Exception {
+                    // TODO: Handle translation exceptions
                     // TODO: Show progress bar
 
-                    String translatedText = Translator.translate(inputText);
-                    String invTranslatedText = InvTranslator.invTranslate(translatedText);
+                    String translatedText = Translator.translate(inputText, "en", "zh-CN");
+                    String invTranslatedText = Translator.translate(translatedText, "zh-CN", "en");
                     String fixInfo = Checker.check(inputText, invTranslatedText);
                     String fixedText = Fixer.fix(invTranslatedText, fixInfo);
                     String validationResult = Verifier.verify(inputText, fixedText);
