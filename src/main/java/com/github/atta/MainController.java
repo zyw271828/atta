@@ -43,14 +43,10 @@ public class MainController {
 
                     String translatedText = Translator.translate(inputText, "en", "zh-CN");
                     String invTranslatedText = Translator.translate(translatedText, "zh-CN", "en");
-                    String fixInfo = Checker.check(inputText, invTranslatedText);
-                    String fixedText = Fixer.fix(invTranslatedText, fixInfo);
-                    String validationResult = Verifier.verify(inputText, fixedText);
+                    String checkResult = Checker.check(inputText, invTranslatedText);
+                    String validationResult = Verifier.verify(inputText, invTranslatedText);
 
-                    outputArea.setText(fixedText);
-
-                    // TODO: Display validationResult in a TextArea
-                    System.out.println(validationResult);
+                    outputArea.setText(invTranslatedText + checkResult + validationResult);
 
                     erasureBtn.setDisable(false);
                     exitBtn.setDisable(false);
