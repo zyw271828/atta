@@ -3,6 +3,7 @@ package com.github.atta;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 
+import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
@@ -52,15 +53,24 @@ public class MainController {
             Task<Boolean> task = new Task<Boolean>() {
                 @Override
                 protected Boolean call() throws Exception {
-                    // TODO: Handle translation exceptions
-                    // TODO: Show progress bar
-
                     String translatedText = Translator.translate(inputText, "en", "zh-CN");
                     String invTranslatedText = Translator.translate(translatedText, "zh-CN", "en");
                     String checkResult = Checker.check(inputText, invTranslatedText);
                     String validationResult = Verifier.verify(inputText, invTranslatedText);
 
-                    outputArea.setText(invTranslatedText + checkResult + validationResult);
+                    final double checkScore = Double.parseDouble(checkResult);
+                    final double validationScore = Double.parseDouble(validationResult);
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            checkArc.setLength(360 * (checkScore / 100));
+                            checkLabel.setText(String.format("%.2f", checkScore) + " %");
+                            verifyArc.setLength(360 * (validationScore / 100));
+                            verifyLabel.setText(String.format("%.2f", validationScore) + " %");
+                        }
+                    });
+
+                    outputArea.setText(invTranslatedText);
 
                     erasureBtn.setDisable(false);
                     exitBtn.setDisable(false);
