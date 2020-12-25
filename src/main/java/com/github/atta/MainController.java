@@ -8,6 +8,8 @@ import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.shape.Arc;
 import javafx.stage.Stage;
 
 public class MainController {
@@ -23,6 +25,18 @@ public class MainController {
 
     @FXML
     private JFXTextArea outputArea;
+
+    @FXML
+    private Label checkLabel;
+
+    @FXML
+    private Label verifyLabel;
+
+    @FXML
+    private Arc checkArc;
+
+    @FXML
+    private Arc verifyArc;
 
     @FXML
     void onErasureBtnClick(ActionEvent event) {
