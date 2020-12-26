@@ -36,7 +36,7 @@ public class Translator {
                 translatedText = jsonObj.getJSONObject("data").getJSONArray("translations").getJSONObject(0)
                         .getString("translatedText");
             } catch (Exception e) {
-                translatedText = jsonObj.toString();
+                throw new IOException(jsonObj.toString());
             }
 
             return translatedText;
