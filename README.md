@@ -26,7 +26,7 @@ ATTA (AnTi Text Analysis) is a personal language characteristic erasure tool des
 
 * Update RAPIDAPI_KEY
 
-  Visit [here](https://rapidapi.com/googlecloud/api/google-translate1/endpoints) to get an x-rapidapi-key (you may need to register an account) and replace the `RAPIDAPI_KEY` in the [code](src/main/java/com/github/atta/Translator.java) with it.
+  Visit [here](https://rapidapi.com/googlecloud/api/google-translate1/endpoints) to get an `x-rapidapi-key` (you may need to [register](https://rapidapi.com/signup) an account and [select](https://rapidapi.com/googlecloud/api/google-translate1/pricing) a free plan), and then use it to replace the `RAPIDAPI_KEY` in the [code](src/main/java/com/github/atta/Translator.java).
 
 * Maven run
 
