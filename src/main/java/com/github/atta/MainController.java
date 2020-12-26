@@ -52,25 +52,29 @@ public class MainController {
 
             Task<Boolean> task = new Task<Boolean>() {
                 @Override
-                protected Boolean call() throws Exception {
-                    String translatedText = Translator.translate(inputText, "en", "zh-CN");
-                    String invTranslatedText = Translator.translate(translatedText, "zh-CN", "en");
-                    String checkResult = Checker.check(inputText, invTranslatedText);
-                    String validationResult = Verifier.verify(inputText, invTranslatedText);
+                protected Boolean call() {
+                    try {
+                        String translatedText = Translator.translate(inputText, "en", "zh-CN");
+                        String invTranslatedText = Translator.translate(translatedText, "zh-CN", "en");
+                        String checkResult = Checker.check(inputText, invTranslatedText);
+                        String validationResult = Verifier.verify(inputText, invTranslatedText);
 
-                    final double checkScore = Double.parseDouble(checkResult);
-                    final double validationScore = Double.parseDouble(validationResult);
-                    Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            checkArc.setLength(360 * (checkScore / 100));
-                            checkLabel.setText(String.format("%.2f", checkScore) + " %");
-                            verifyArc.setLength(360 * (validationScore / 100));
-                            verifyLabel.setText(String.format("%.2f", validationScore) + " %");
-                        }
-                    });
+                        final double checkScore = Double.parseDouble(checkResult);
+                        final double validationScore = Double.parseDouble(validationResult);
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                checkArc.setLength(360 * (checkScore / 100));
+                                checkLabel.setText(String.format("%.2f", checkScore) + " %");
+                                verifyArc.setLength(360 * (validationScore / 100));
+                                verifyLabel.setText(String.format("%.2f", validationScore) + " %");
+                            }
+                        });
 
-                    outputArea.setText(invTranslatedText);
+                        outputArea.setText(invTranslatedText);
+                    } catch (Exception e) {
+                        outputArea.setText(e.getMessage());
+                    }
 
                     erasureBtn.setDisable(false);
                     exitBtn.setDisable(false);
