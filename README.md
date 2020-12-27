@@ -11,7 +11,11 @@ ATTA (AnTi Text Analysis) is a personal language characteristic erasure tool des
   ```bash
   sudo apt install openjdk-11-jdk python3 python3-pip maven
   ```
-
+* Download and install two jars that maven repository doesn't have.  You can find this two jars in "src/main/resources/"
+  ```bash
+  mvn install:install-file -Dfile=meteor-1.5.jar -Dpackaging=jar -DgroupId=edu.cmu -DartifactId=meteor -Dversion=1.5
+  mvn install:install-file -Dfile=SceneGraphParser-1.0.jar -Dpackaging=jar -DgroupId=edu.stanford.nlp -DartifactId=scenegraph -Dversion=1.0
+  ```
 * Install Pycocoevalcap
 
   ```bash
