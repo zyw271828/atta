@@ -24,7 +24,7 @@ ATTA (AnTi Text Analysis) is a personal language characteristic erasure tool des
   git clone https://github.com/zyw271828/atta.git && cd atta
   ```
 
-* Download & Configure SPICE
+* Download & configure SPICE
 
   ```bash
   sudo apt install wget unzip
