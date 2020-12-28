@@ -41,6 +41,14 @@ ATTA (AnTi Text Analysis) is a personal language characteristic erasure tool des
   mvn javafx:run
   ```
 
+## Technical Details
+
+<p align="center"><img src="./res/img/atta_arch.png" width="512"></p>
+
+## Screenshot
+
+<p align="center"><img src="./res/img/atta_screenshot.png" width="512"></p>
+
 ## License
 
 ATTA is licensed under the MIT License.
