@@ -186,3 +186,7 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# Temporary files
+input.json
+output.json
