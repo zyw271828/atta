@@ -15,3 +15,6 @@ echo "Configuring..."
 mvn install:install-file -Dfile=./lib/SPICE-1.0/spice-1.0.jar \
     -DgroupId=edu.anu.spice -DartifactId=spice -Dversion=1.0 -Dpackaging=jar \
     -DgeneratePom=true
+
+echo "Cleaning up"
+rm ./SPICE-1.0.zip
