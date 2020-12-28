@@ -4,14 +4,16 @@
 
 LINK=https://panderson.me/images/SPICE-1.0.zip
 
-echo "Downloading..."
+echo "Downloading SPICE..."
 wget -c $LINK
 
-echo "Unzipping..."
+echo "Unzipping SPICE..."
 unzip SPICE-1.0.zip -d lib/
 
-echo "Configuring..."
+echo "Getting Stanford CoreNLP models..."
 ./lib/SPICE-1.0/get_stanford_models.sh
 
-echo "Cleaning up"
+echo "Cleaning up..."
 rm ./SPICE-1.0.zip
+
+echo "Done."
